@@ -27,7 +27,10 @@ router.put('/:kd_pupuk', (req, res) =>{
     pupukUpdt.nm_pupuk = req.body.nm_pupuk || pupukUpdt.nm_pupuk;
     pupukUpdt.stock = req.body.stock || pupukUpdt.stock;
 
-   
+    res.status(200).json({
+        message: `Produk dengan ID '${pupukUpdt.kd_pupuk}' telah diperbarui`,
+        updatedPupuk: pupukUpdt
+    });
 });
 
 
